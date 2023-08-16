@@ -21,7 +21,7 @@ struct CategoryView: View {
     var body: some View {
         VStack(spacing: 0) {
             // Categories Title
-            ListTitleView(title: "Categories")
+            ListTitleView(title: "Categories", isViewAll: true)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: gridLayout, alignment: .center, spacing: columnSpacing, pinnedViews: [], content: {

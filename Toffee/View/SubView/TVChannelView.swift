@@ -21,7 +21,7 @@ struct TVChannelView: View {
             
             VStack(spacing: 0) {
                 // TV Channels TITLE
-                ListTitleView(title: "Popular TV Channels")
+                ListTitleView(title: "Popular TV Channels", isViewAll: true)
                 
                 // TV Channels List
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -34,7 +34,6 @@ struct TVChannelView: View {
                     }.padding(.horizontal, 8)
                 }
             }
-//            .aspectRatio(contentMode: .fit)
         }
         .foregroundColor(Color.colorForeground)
     }

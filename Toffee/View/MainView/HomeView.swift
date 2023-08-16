@@ -19,11 +19,17 @@ struct HomeView: View {
             // Categories
             CategoryView()
             
-            Text("Moments")
-                .font(.title3)
-                .foregroundColor(Color.colorForeground)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
+            // Moments
+            MomentsView()
+            
+            // Editors
+            EditorsChoiceView()
+            
+            // Trending Channels
+            TrendingChannelView()
+            
+            // Feed
+            FeedView()
             
             
             Spacer()

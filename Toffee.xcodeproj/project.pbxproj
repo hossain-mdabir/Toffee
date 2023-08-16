@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107754232A8CA34B0083BC27 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107754222A8CA34B0083BC27 /* MomentsView.swift */; };
+		107754252A8CAB540083BC27 /* EditorsChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107754242A8CAB540083BC27 /* EditorsChoiceView.swift */; };
+		107754272A8CB4880083BC27 /* Moments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107754262A8CB4880083BC27 /* Moments.swift */; };
+		107754292A8CB4A20083BC27 /* EditorsChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107754282A8CB4A20083BC27 /* EditorsChoice.swift */; };
+		1077542B2A8CC6C70083BC27 /* TrendingChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077542A2A8CC6C70083BC27 /* TrendingChannelView.swift */; };
+		1077542D2A8CC76E0083BC27 /* TrendingChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077542C2A8CC76E0083BC27 /* TrendingChannel.swift */; };
+		1077542F2A8CD31D0083BC27 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077542E2A8CD31D0083BC27 /* FeedView.swift */; };
 		10ED692B2A89F05300DAE206 /* ToffeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED692A2A89F05300DAE206 /* ToffeeApp.swift */; };
 		10ED692D2A89F05300DAE206 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED692C2A89F05300DAE206 /* ContentView.swift */; };
 		10ED692F2A89F05400DAE206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10ED692E2A89F05400DAE206 /* Assets.xcassets */; };
@@ -27,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		107754222A8CA34B0083BC27 /* MomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsView.swift; sourceTree = "<group>"; };
+		107754242A8CAB540083BC27 /* EditorsChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorsChoiceView.swift; sourceTree = "<group>"; };
+		107754262A8CB4880083BC27 /* Moments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moments.swift; sourceTree = "<group>"; };
+		107754282A8CB4A20083BC27 /* EditorsChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorsChoice.swift; sourceTree = "<group>"; };
+		1077542A2A8CC6C70083BC27 /* TrendingChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingChannelView.swift; sourceTree = "<group>"; };
+		1077542C2A8CC76E0083BC27 /* TrendingChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingChannel.swift; sourceTree = "<group>"; };
+		1077542E2A8CD31D0083BC27 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		10ED69272A89F05300DAE206 /* Toffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10ED692A2A89F05300DAE206 /* ToffeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToffeeApp.swift; sourceTree = "<group>"; };
 		10ED692C2A89F05300DAE206 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +127,10 @@
 				10ED69532A8A2F9400DAE206 /* ListTitleView.swift */,
 				10ED694F2A8A21CC00DAE206 /* TVChannelView.swift */,
 				10ED69512A8A2E0C00DAE206 /* CategoryView.swift */,
+				107754222A8CA34B0083BC27 /* MomentsView.swift */,
+				107754242A8CAB540083BC27 /* EditorsChoiceView.swift */,
+				1077542A2A8CC6C70083BC27 /* TrendingChannelView.swift */,
+				1077542E2A8CD31D0083BC27 /* FeedView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -150,6 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				10ED69562A8A375700DAE206 /* Category.swift */,
+				1077542C2A8CC76E0083BC27 /* TrendingChannel.swift */,
+				107754262A8CB4880083BC27 /* Moments.swift */,
+				107754282A8CB4A20083BC27 /* EditorsChoice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,11 +250,18 @@
 				10ED694B2A8A100500DAE206 /* Colors.swift in Sources */,
 				10ED692D2A89F05300DAE206 /* ContentView.swift in Sources */,
 				10ED693F2A89F07F00DAE206 /* ProfileView.swift in Sources */,
+				107754272A8CB4880083BC27 /* Moments.swift in Sources */,
+				1077542F2A8CD31D0083BC27 /* FeedView.swift in Sources */,
 				10ED69522A8A2E0C00DAE206 /* CategoryView.swift in Sources */,
 				10ED69482A89F37D00DAE206 /* CarosalView.swift in Sources */,
 				10ED69542A8A2F9400DAE206 /* ListTitleView.swift in Sources */,
+				107754252A8CAB540083BC27 /* EditorsChoiceView.swift in Sources */,
+				107754292A8CB4A20083BC27 /* EditorsChoice.swift in Sources */,
+				1077542B2A8CC6C70083BC27 /* TrendingChannelView.swift in Sources */,
 				10ED69412A89F07F00DAE206 /* HomeView.swift in Sources */,
 				10ED69422A89F07F00DAE206 /* FlagView.swift in Sources */,
+				1077542D2A8CC76E0083BC27 /* TrendingChannel.swift in Sources */,
+				107754232A8CA34B0083BC27 /* MomentsView.swift in Sources */,
 				10ED69442A89F07F00DAE206 /* SettingView.swift in Sources */,
 				10ED69572A8A375700DAE206 /* Category.swift in Sources */,
 				10ED69432A89F07F00DAE206 /* HomeScreenView.swift in Sources */,

@@ -16,6 +16,8 @@ struct Category: Identifiable {
 }
 
 
+// MARK: - Demo Data
 let categories: [Category] = [
     Category(catLogo: "theatermasks", catName: "Web Series", catBackgroundImage: "Web Series"), Category(catLogo: "birthday.cake", catName: "Food", catBackgroundImage: "Food"), Category(catLogo: "play.display", catName: "Drama", catBackgroundImage: "Drama"), Category(catLogo: "camera.badge.ellipsis", catName: "Movies", catBackgroundImage: "Movies"), Category(catLogo: "music.mic.circle", catName: "Music Videos", catBackgroundImage: "Music Videos"), Category(catLogo: "highlighter", catName: "Educational", catBackgroundImage: "Educational"), Category(catLogo: "theatermasks", catName: "Web Series", catBackgroundImage: "Web Series"), Category(catLogo: "birthday.cake", catName: "Food", catBackgroundImage: "Food"), Category(catLogo: "play.display", catName: "Drama", catBackgroundImage: "Drama"), Category(catLogo: "camera.badge.ellipsis", catName: "Movies", catBackgroundImage: "Movies"), Category(catLogo: "music.mic.circle", catName: "Music Videos", catBackgroundImage: "Music Videos"), Category(catLogo: "highlighter", catName: "Educational", catBackgroundImage: "Educational")
 ]
+

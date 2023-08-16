@@ -10,6 +10,7 @@ import SwiftUI
 struct ListTitleView: View {
     // MARK: - Properties
     let title: String
+    let isViewAll: Bool
     
     // MARK: - Body
     var body: some View {
@@ -20,15 +21,18 @@ struct ListTitleView: View {
             
             Spacer()
             
-            Button {
-                
-            } label: {
-                HStack(spacing: 0) {
-                    Text("View All")
+            // ViewAll button
+            if isViewAll {
+                Button {
                     
-                    Image(systemName: "chevron.right")
+                } label: {
+                    HStack(spacing: 0) {
+                        Text("View All")
+                        
+                        Image(systemName: "chevron.right")
+                    }
+                    .font(.system(size: 14, weight: .semibold))
                 }
-                .font(.system(size: 14, weight: .semibold))
             }
         }
         .padding(20)
@@ -39,6 +43,6 @@ struct ListTitleView: View {
 // MARK: - Preview
 struct ListTitleView_Previews: PreviewProvider {
     static var previews: some View {
-        ListTitleView(title: "Popular TV Channels")
+        ListTitleView(title: "Popular TV Channels", isViewAll: true)
     }
 }
