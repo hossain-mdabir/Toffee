@@ -11,7 +11,15 @@ struct FlagView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("Flag")
+//            Text("Flag")
+            ScrollView(showsIndicators: false) {
+                ForEach(0..<99) { index in
+                    Text("\(index)")
+                        .frame(maxWidth: .infinity, maxHeight: 150)
+                        .font(.largeTitle.bold())
+                        .background(Color.red)
+                }
+            }
             Spacer()
         }
     }

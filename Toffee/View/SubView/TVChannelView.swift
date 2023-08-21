@@ -11,6 +11,7 @@ struct TVChannelView: View {
     // MARK: - Properties
     let channelList = ["channel 0", "channel 1", "channel 2", "channel 3", "channel 4", "channel 5", "channel 6", "channel 7", ]
     
+    
     // Body
     var body: some View {
         ZStack(alignment: .top) {
@@ -25,7 +26,7 @@ struct TVChannelView: View {
                 
                 // TV Channels List
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
+                    LazyHStack {
                         ForEach(0 ..< channelList.count, id: \.self) { channel in
                             Image(channelList[channel])
                                 .resizable()

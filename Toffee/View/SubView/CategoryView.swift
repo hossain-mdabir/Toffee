@@ -25,32 +25,38 @@ struct CategoryView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: gridLayout, alignment: .center, spacing: columnSpacing, pinnedViews: [], content: {
-                    ForEach(categories) { category in
-                        Image(category.catBackgroundImage)
-                            .resizable()
-//                            .scaledToFit()
-                            .frame(width: 200)
-                            .cornerRadius(20)
-                            .overlay (
-                                HStack {
-                                    Image(systemName: category.catLogo)
-                                        .font(.title2.weight(.semibold))
-                                    
-                                    Text(category.catName)
-                                        .font(.system(size: 16, weight: .bold))
-                                }
-                                    .font(.title3.weight(.semibold))
-                                    .foregroundColor(Color.white)
-                                    .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                                    .padding([.leading, .bottom], 10)
-                                , alignment: .bottomLeading
-                            )
+                    ForEach(categories) { item in
+                        category(category: item)
                     }
                 })
                 .frame(maxWidth: .infinity, maxHeight: 200)
             }
             .padding(.horizontal, 10)
         }
+    }
+    
+    // MARK: - Category item
+    @ViewBuilder
+    func category(category: Category) -> some View {
+        Image(category.catBackgroundImage)
+            .resizable()
+//                            .scaledToFit()
+            .frame(width: 200)
+            .cornerRadius(20)
+            .overlay (
+                HStack {
+                    Image(systemName: "person") // category.catLogo
+                        .font(.title2.weight(.semibold))
+                    
+                    Text(category.catName)
+                        .font(.system(size: 16, weight: .bold))
+                }
+                    .font(.title3.weight(.semibold))
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: .infinity, alignment: .bottomLeading)
+                    .padding([.leading, .bottom], 10)
+                , alignment: .bottomLeading
+            )
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101184CA2A937367000D4267 /* ShimmerEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101184C92A937367000D4267 /* ShimmerEffectView.swift */; };
 		107754232A8CA34B0083BC27 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107754222A8CA34B0083BC27 /* MomentsView.swift */; };
 		107754252A8CAB540083BC27 /* EditorsChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107754242A8CAB540083BC27 /* EditorsChoiceView.swift */; };
 		107754272A8CB4880083BC27 /* Moments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107754262A8CB4880083BC27 /* Moments.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		101184C92A937367000D4267 /* ShimmerEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerEffectView.swift; sourceTree = "<group>"; };
 		107754222A8CA34B0083BC27 /* MomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsView.swift; sourceTree = "<group>"; };
 		107754242A8CAB540083BC27 /* EditorsChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorsChoiceView.swift; sourceTree = "<group>"; };
 		107754262A8CB4880083BC27 /* Moments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moments.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				107754242A8CAB540083BC27 /* EditorsChoiceView.swift */,
 				1077542A2A8CC6C70083BC27 /* TrendingChannelView.swift */,
 				1077542E2A8CD31D0083BC27 /* FeedView.swift */,
+				101184C92A937367000D4267 /* ShimmerEffectView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10ED69502A8A21CC00DAE206 /* TVChannelView.swift in Sources */,
+				101184CA2A937367000D4267 /* ShimmerEffectView.swift in Sources */,
 				10ED69402A89F07F00DAE206 /* CurveShapeView.swift in Sources */,
 				10ED694B2A8A100500DAE206 /* Colors.swift in Sources */,
 				10ED692D2A89F05300DAE206 /* ContentView.swift in Sources */,
@@ -403,6 +407,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,6 +437,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

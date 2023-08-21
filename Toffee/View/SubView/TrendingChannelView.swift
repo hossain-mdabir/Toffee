@@ -26,37 +26,44 @@ struct TrendingChannelView: View {
                 // Trending Channels List
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
-                        ForEach(0 ..< trendingChannel.count, id: \.self) { index in
-                            VStack {
-                                Image(trendingChannel[index].channelImage)
-                                    .resizable()
-                                    .frame(width: 80, height: 80)
-                                    .cornerRadius(40)
-                                
-                                Text(trendingChannel[index].channelName)
-                                    .font(.system(size: 12))
-                                
-                                Button {
-                                    
-                                } label: {
-                                    Text("FOLLOW")
-                                        .font(.system(size: 10, weight: .semibold))
-                                        .frame(height: 25)
-                                        .frame(maxWidth: .infinity)
-                                        .foregroundColor(Color.pink)
-                                        .overlay(
-                                            RoundedRectangle(cornerRadius: 20)
-                                                .stroke(.pink, lineWidth: 1)
-                                        )
-                                }
-                            }
-                            .frame(width: 80)
+                        ForEach(trendingChannels) { item in
+                            trendingChannel(trendingChannel: item)
                         }
-                    }.padding([.vertical, .horizontal], 8)
+                    }
+                    .padding([.vertical, .horizontal], 8)
                 }
             }
         }
         .foregroundColor(Color.colorForeground)
+    }
+    
+    // MARK: - Trending Channel Item
+    @ViewBuilder
+    func trendingChannel(trendingChannel: TrendingChannel) -> some View {
+        VStack {
+            Image(trendingChannel.channelImage)
+                .resizable()
+                .frame(width: 80, height: 80)
+                .cornerRadius(40)
+            
+            Text(trendingChannel.channelName)
+                .font(.system(size: 12))
+            
+            Button {
+                
+            } label: {
+                Text("FOLLOW")
+                    .font(.system(size: 10, weight: .semibold))
+                    .frame(height: 25)
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(Color.pink)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(.pink, lineWidth: 1)
+                    )
+            }
+        }
+        .frame(width: 80)
     }
 }
 

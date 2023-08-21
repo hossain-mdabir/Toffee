@@ -9,30 +9,31 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack(spacing: 0) {
-            // Carosal Scroll
-            CarosalView()
-            
-            // TV Channels
-            TVChannelView()
-            
-            // Categories
-            CategoryView()
-            
-            // Moments
-            MomentsView()
-            
-            // Editors
-            EditorsChoiceView()
-            
-            // Trending Channels
-            TrendingChannelView()
-            
-            // Feed
-            FeedView()
-            
-            
-            Spacer()
+        ScrollView(.vertical, showsIndicators: false) {
+            LazyVStack(spacing: 0) {
+                // Carosal Scroll
+                CarosalView()
+                
+                // TV Channels
+                TVChannelView()
+                
+                // Categories
+                CategoryView()
+                
+                // Moments
+                MomentsView()
+                
+                // Editors
+                EditorsChoiceView()
+                
+                // Trending Channels
+                TrendingChannelView()
+                
+                // Feed
+                FeedView()
+                
+                Spacer()
+            }
         }
     }
 }

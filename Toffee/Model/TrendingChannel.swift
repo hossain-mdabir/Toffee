@@ -15,6 +15,6 @@ struct TrendingChannel: Identifiable {
 }
 
 // MARK: - Demo Data
-let trendingChannel: [TrendingChannel] = [
+let trendingChannels: [TrendingChannel] = [
     TrendingChannel(channelName: "CMV", channelImage: "trending"), TrendingChannel(channelName: "Talukdar Academy", channelImage: "trending 1"), TrendingChannel(channelName: "Shafin Ahmed", channelImage: "trending 2"), TrendingChannel(channelName: "Gaming With Talha", channelImage: "trending 3"), TrendingChannel(channelName: "CV Dision", channelImage: "trending 4"), TrendingChannel(channelName: "MK Production", channelImage: "trending 5")
 ]

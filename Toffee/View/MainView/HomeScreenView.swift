@@ -15,11 +15,11 @@ struct HomeScreenView: View {
     // MARK: - Properties
     
     // View Selection
-    @State private var selectedView: SelectedView? = .home
+    @State private var selectedView: SelectedView?  = .home
     
     // MARK: - Body
     var body: some View {
-        VStack(spacing: 0) {
+       VStack(spacing: 0) {
             // NavBar
             HStack(spacing: 20) {
                 Image("logo")
@@ -60,108 +60,101 @@ struct HomeScreenView: View {
             .font(.title2)
             .foregroundColor(Color.colorForeground)
             .background(Color.colorBackground)
-            
-            
-            ScrollView(showsIndicators: false) {
-                VStack(spacing: 0) {
-                    // Conditioal Views
-                    switch selectedView {
-                    case .home:
-                        HomeView()
-                    case .flag:
-                        FlagView()
-                    case .setting:
-                        SettingView()
-                    case .profile:
-                        ProfileView()
-                    case .none:
-                        HomeView()
-                    }
-                }
-            }
-            
-            // TabBar Buttons
-            ZStack(alignment: .bottom) { //(alignment: .bottom)
-                HStack {
-                    Button {
-                        selectedView = .home
-                    } label: {
-                        VStack {
-                            Image(systemName:  "house")
-                            
-                            Text("Home")
-                                .font(.system(size: 12))
+            .zIndex(5)
+           
+           
+           VStack(spacing: 0) {
+               // Conditioal Views
+               switch selectedView {
+               case .home:
+                   HomeView()
+               case .flag:
+                   FlagView()
+               case .setting:
+                   SettingView()
+               case .profile:
+                   ProfileView()
+               case .none:
+                   HomeView()
+               }
+           }
+           
+           // TabBar Buttons
+           ZStack(alignment: .center) { //(alignment: .bottom)
+               HStack (alignment: .center){
+                   HStack(alignment: .center){
+                       Spacer()
+                       Button {
+                           selectedView = .home
+                       } label: {
+                           VStack {
+                               Image(systemName:  "house")
+                               Text("Home")
+                                   .font(.system(size: 12))
+                           }
+                           .foregroundColor(selectedView == .home ? .black : .gray)
                         }
-                        .foregroundColor(selectedView == .home ? .black : .gray)
-                    }
-                    
-                    Spacer(minLength: 12)
-                    
-                    Button {
-                        selectedView = .flag
-                    } label: {
-                        VStack {
-                            Image(systemName:  "flag")
-                            
-                            Text("Flag")
-                                .font(.system(size: 12))
+                        Spacer(minLength: 10)
+                        
+                        
+                        Button {
+                            selectedView = .flag
+                        } label: {
+                            VStack {
+                                Image(systemName:  "flag")
+                                
+                                Text("Flag")
+                                    .font(.system(size: 12))
+                            }
+                            .foregroundColor(selectedView == .flag ? .black : .gray)
                         }
-                        .foregroundColor(selectedView == .flag ? .black : .gray)
-                        .padding(.horizontal, 10)
+                        Spacer()
                     }
                     
-                    Spacer()
-                        .frame(width: 100)
+                    Spacer(minLength: 70)
                     
-                    Button {
-                        selectedView = .setting
-                    } label: {
-                        VStack {
-                            Image(systemName:  "wrench.and.screwdriver.fill")
-                            
-                            Text("Settings")
-                                .font(.system(size: 12))
+                    HStack(alignment: .center){
+                        Spacer()
+                        Button {
+                            selectedView = .setting
+                        } label: {
+                            VStack {
+                                Image(systemName:  "wrench.and.screwdriver.fill")
+                                
+                                Text("Settings")
+                                    .font(.system(size: 12))
+                            }
+                            .foregroundColor(selectedView == .setting ? .black : .gray)
                         }
-                        .foregroundColor(selectedView == .setting ? .black : .gray)
-                    }
-                    
-                    Spacer(minLength: 12)
-                    
-                    Button {
-                        selectedView = .profile
-                    } label: {
-                        VStack {
-                            Image(systemName:  "person")
-                            
-                            Text("Profile")
-                                .font(.system(size: 12))
+                        
+                        Spacer(minLength: 10)
+                        
+                        Button {
+                            selectedView = .profile
+                        } label: {
+                            VStack {
+                                Image(systemName:  "person")
+                                
+                                Text("Profile")
+                                    .font(.system(size: 12))
+                            }
+                            .foregroundColor(selectedView == .profile ? .black : .gray)
                         }
-                        .foregroundColor(selectedView == .profile ? .black : .gray)
+                        Spacer()
                     }
-                }
-                .fontWeight(.bold)
-                .padding()
-                .padding(.horizontal, 22)
-                .offset(y: -18)
-                .background(CurveShapeView(foregroundColor: Color.white, shadowColor: Color.gray))
-                .frame(maxWidth: .infinity, alignment: .bottom)
+                }.padding(.horizontal)
+                    .padding(.bottom)
+                    .background(alignment:  .center) {
+                        CurveShapeView(foregroundColor: Color.white, shadowColor: Color.black)
+                    }
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
                 
                 // Center Button
-                Button {
-                    
-                } label: {
-                    Image(systemName: "bolt")
-                    
-                        .font(.title3.weight(.bold))
-                        .foregroundColor(Color.white)
-                        .padding(20)
-                }
-                .background(Color.green)
-                .clipShape(Circle())
-                .offset(y: -48)
-            }.ignoresSafeArea(.all, edges: .bottom)
+             
+            } //.ignoresSafeArea(.all, edges: .bottom)
         }
-        .ignoresSafeArea(.all, edges: .bottom)
+       .ignoresSafeArea(.all, edges: .bottom)
     }
 }
 

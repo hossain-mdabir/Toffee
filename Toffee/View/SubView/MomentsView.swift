@@ -19,35 +19,41 @@ struct MomentsView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack {
-                    ForEach(0 ..< moments.count, id: \.self) { index in
-                        ZStack(alignment: .center) {
-                            Image(moments[index].imageName)
-                                .resizable()
-                                .frame(width: 120, height: 200)
-                            
-                            Image(systemName: "play.fill")
-                                .padding(15)
-                                .font(.title3)
-                                .foregroundColor(Color.white)
-                                .background(Color.black.opacity(0.4))
-                                .cornerRadius(30)
-                        }
-                        .overlay(
-                            Text(moments[index].momentTitle)
-                                .padding([.leading, .bottom], 5)
-                                .font(.system(size: 11))
-                                .multilineTextAlignment(.leading)
-                                .foregroundColor(Color.white)
-                                .frame(maxWidth: .infinity, maxHeight: 30, alignment: .bottomLeading)
-                                .background(Color.black.opacity(0.3))
-                            , alignment: .bottomLeading
-                        )
-                        .cornerRadius(15)
+                    ForEach(moments) { item in
+                        moment(moment: item)
                     }
                 }
                 .padding(.horizontal, 10)
             }
         }
+    }
+    
+    // MARK: - Moment item
+    @ViewBuilder
+    func moment(moment: Moments) -> some View {
+        ZStack(alignment: .center) {
+            Image(moment.imageName)
+                .resizable()
+                .frame(width: 120, height: 200)
+            
+            Image(systemName: "play.fill")
+                .padding(15)
+                .font(.title3)
+                .foregroundColor(Color.white)
+                .background(Color.black.opacity(0.4))
+                .cornerRadius(30)
+        }
+        .overlay(
+            Text(moment.momentTitle)
+                .padding([.leading, .bottom], 5)
+                .font(.system(size: 11))
+                .multilineTextAlignment(.leading)
+                .foregroundColor(Color.white)
+                .frame(maxWidth: .infinity, maxHeight: 30, alignment: .bottomLeading)
+                .background(Color.black.opacity(0.3))
+            , alignment: .bottomLeading
+        )
+        .cornerRadius(15)
     }
 }
 
