@@ -12,8 +12,8 @@ struct ToffeeApp: App {
     var body: some Scene {
         WindowGroup {
             HomeScreenView()
-                .redacted(reason: .placeholder)
-                .shimmerEffect()
+//                .redacted(reason: .placeholder)
+//                .shimmerEffect()
         }
     }
 }
