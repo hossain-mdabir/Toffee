@@ -8,18 +8,15 @@
 import SwiftUI
 
 struct TrendingChannelView: View {
-    // MARK: - Properties
-    
-    
-    // MARK: - Body
     var body: some View {
         ZStack(alignment: .top) {
             Rectangle()
                 .fill(Color.colorBackground)
-                .frame(maxWidth: .infinity, maxHeight: 110)
-                .clipShape(RoundedCornersShape(corners: [.bottomLeft, .bottomRight], radius: 20))
-            
+               // .cornerRadius(15)
+                .frame(height: 110)
+                
             VStack(spacing: 0) {
+                
                 // Trending Channels TITLE
                 ListTitleView(title: "Trending Channels", isViewAll: true)
                 
@@ -37,20 +34,30 @@ struct TrendingChannelView: View {
         .foregroundColor(Color.colorForeground)
     }
     
-    // MARK: - Trending Channel Item
-    @ViewBuilder
-    func trendingChannel(trendingChannel: TrendingChannel) -> some View {
+}
+
+// MARK: - Properties
+struct TrendingChannelsView_Previews: PreviewProvider {
+    static var previews: some View {
+        TrendingChannelView()
+    }
+}
+
+struct trendingChannel: View {
+    var trendingChannel: TrendingChannel
+    var body: some View{
         VStack {
             Image(trendingChannel.channelImage)
                 .resizable()
                 .frame(width: 80, height: 80)
-                .cornerRadius(40)
-            
+                .clipShape(Circle())
+                            
             Text(trendingChannel.channelName)
                 .font(.system(size: 12))
+                .lineLimit(1)
             
             Button {
-                
+                print("Followed")
             } label: {
                 Text("FOLLOW")
                     .font(.system(size: 10, weight: .semibold))
@@ -63,13 +70,5 @@ struct TrendingChannelView: View {
                     )
             }
         }
-        .frame(width: 80)
-    }
-}
-
-// MARK: - Properties
-struct TrendingChannelsView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrendingChannelView()
     }
 }

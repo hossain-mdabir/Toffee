@@ -33,6 +33,13 @@ struct TVChannelView: View {
                                 .frame(width: 80, height: 80)
                         }
                     }.padding(.horizontal, 8)
+                        .clipped()
+//                        .onAppear{
+//                            UIScrollView.appearance().bounces = false
+//                        }
+//                        .onDisappear{
+//                            UIScrollView.appearance().bounces = true
+//                        }
                 }
             }
         }

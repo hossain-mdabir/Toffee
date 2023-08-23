@@ -36,11 +36,21 @@ struct CategoryView: View {
     }
     
     // MARK: - Category item
-    @ViewBuilder
-    func category(category: Category) -> some View {
+}
+
+// MARK: - Preview
+struct CategoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        CategoryView()
+    }
+}
+
+struct category: View {
+    var category: Category
+    var body: some View {
         Image(category.catBackgroundImage)
             .resizable()
-//                            .scaledToFit()
+        //                            .scaledToFit()
             .frame(width: 200)
             .cornerRadius(20)
             .overlay (
@@ -57,12 +67,5 @@ struct CategoryView: View {
                     .padding([.leading, .bottom], 10)
                 , alignment: .bottomLeading
             )
-    }
-}
-
-// MARK: - Preview
-struct CategoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryView()
     }
 }

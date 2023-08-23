@@ -10,34 +10,37 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            LazyVStack(spacing: 0) {
-                // Carosal Scroll
-                CarosalView()
-                
-                // TV Channels
-                TVChannelView()
-                
-                // Categories
-                CategoryView()
-                
-                // Moments
-                MomentsView()
-                
-                // Editors
-                EditorsChoiceView()
-                
-                // Trending Channels
-                TrendingChannelView()
-                
-                // Feed
-                FeedView()
-                
-                Spacer()
-            }
+        
+        ScrollView {
+            CarosalView()
+            TVChannelView()
+            // Categories
+            CategoryView()
+            // Moments
+            MomentsView()
+            // Editors
+            //EditorsChoiceView()
+            // Trending Channels
+            TrendingChannelView()
+            // Feed
+           
+            ForEach(editorsChoices) {item in
+                LazyVStack{
+                    feed(feed: item)
+                }
+            }//.onAppear {
+//                UIScrollView.appearance().bounces = false
+//            }
+//            .onDisappear {
+//                UIScrollView.appearance().bounces = true
+//            }
+
+        }
+
+        .frame(maxHeight: UIScreen.main.bounds.height)
         }
     }
-}
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

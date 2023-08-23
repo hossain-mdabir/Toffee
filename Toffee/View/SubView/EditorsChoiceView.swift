@@ -17,7 +17,7 @@ struct EditorsChoiceView: View {
             // List Title
             ListTitleView(title: "Editor's Choice", isViewAll: false)
             
-            LazyVStack {
+            VStack {
                 ForEach(0 ..< editorsChoices.count, id: \.self) { index in
                     editorsChoiceItem(editorsChoice: editorsChoices[index], index: index)
                 }
@@ -30,15 +30,25 @@ struct EditorsChoiceView: View {
         .padding(.top)
     }
     
-    
-    // MARK: - Editor's Choice List
-    @ViewBuilder
-    func editorsChoiceItem(editorsChoice: EditorsChoice, index: Int) -> some View {
+}
+
+// MARK: - Preview
+struct EditorsChoiceView_Previews: PreviewProvider {
+    static var previews: some View {
+        EditorsChoiceView()
+    }
+}
+
+struct editorsChoiceItem: View {
+    var editorsChoice: EditorsChoice
+    var index: Int
+    var body: some View {
         if index % 2 == 0 { // if even --> will show on left. otherwise right
             HStack(spacing: 5) {
                 Image(editorsChoice.imageName)
                     .resizable()
-                    .frame(maxWidth: UIScreen.main.bounds.width / 2, maxHeight: 120, alignment: .leading)
+                    .scaledToFit()
+                    .frame(width: UIScreen.main.bounds.width / 2, height: 120, alignment: .leading)
                     .overlay(
                         Text(editorsChoice.duration)
                             .font(.system(size: 12))
@@ -64,16 +74,16 @@ struct EditorsChoiceView: View {
                     Text("\(editorsChoice.totalView) Views · \(editorsChoice.totalViewTime)")
                         .font(.system(size: 14, weight: .semibold))
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .frame(alignment: .topLeading)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(alignment: .leading)
         } else {
             HStack(spacing: 5) {
-                 VStack(alignment: .leading) {
+                VStack(alignment: .leading) {
                     Text(editorsChoice.seriesTitle)
                         .multilineTextAlignment(.leading)
                         .font(.system(size: 14))
-
+                    
                     HStack {
                         Image("toffee-logo")
                             .resizable()
@@ -82,15 +92,15 @@ struct EditorsChoiceView: View {
                         
                         Text("Toffee")
                     }
-                     
-                     Text("\(editorsChoice.totalView) Views · \(editorsChoice.totalViewTime)")
-                         .font(.system(size: 14, weight: .semibold))
-                 }
-                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-
+                    
+                    Text("\(editorsChoice.totalView) Views · \(editorsChoice.totalViewTime)")
+                        .font(.system(size: 14, weight: .semibold))
+                }
+                .frame(alignment: .topTrailing)
+                
                 Image(editorsChoice.imageName)
                     .resizable()
-                    .frame(maxWidth: UIScreen.main.bounds.width / 2, maxHeight: 120, alignment: .trailing)
+                    .frame(width: UIScreen.main.bounds.width / 2, height: 120, alignment: .trailing)
                     .overlay(
                         Text(editorsChoice.duration)
                             .font(.system(size: 12))
@@ -99,14 +109,7 @@ struct EditorsChoiceView: View {
                         , alignment: .bottomTrailing
                     )
             }
-            .frame(maxWidth: .infinity, alignment: .trailing)
+            .frame(alignment: .trailing)
         }
-    }
-}
-
-// MARK: - Preview
-struct EditorsChoiceView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditorsChoiceView()
     }
 }
