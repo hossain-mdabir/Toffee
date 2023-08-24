@@ -36,6 +36,7 @@ struct FeedView: View {
                     }
                 } label: {
                     Image(systemName: "slider.horizontal.3")
+//      .bold()
                 }
             }
             .foregroundColor(Color.colorForeground)
@@ -50,26 +51,15 @@ struct FeedView: View {
     }
     
     // MARK: - Feed List
-}
-
-// MARK: - Preview
-struct FeedView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedView()
-            .background(Color.colorBackground)
-    }
-}
-
-struct feed: View {
-    var feed: EditorsChoice
-    var body: some View {
-        LazyVStack(alignment: .leading, spacing: 0) {
+    @ViewBuilder
+    func feed(feed: EditorsChoice) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
             Image(feed.imageName)
                 .resizable()
-                .frame(height: 220)
+                .frame(maxWidth: .infinity, maxHeight: 220)
                 .overlay(
                     Text(feed.duration)
-                    //         .font(.system(size: 12))
+//         .font(.system(size: 12))
                         .foregroundColor(Color.white)
                         .background(Color.black.opacity(0.5))
                     , alignment: .bottomTrailing
@@ -143,24 +133,32 @@ struct feed: View {
                         Spacer()
                         
                         // Share
-                        Image(systemName: "arrowshape.turn.up.right")
-                        Text("202")
+                            Image(systemName: "arrowshape.turn.up.right")
+                            Text("202")
                         
                         Spacer()
                         
                         // Reaction
-                        Image(systemName: "heart")
-                        Text("React")
+                            Image(systemName: "heart")
+                            Text("React")
                     }
                     .padding(.trailing, 30)
                 }
             }
             .padding([.top, .leading, .bottom], 10)
             .background(Color("DarkTeal"))
-            //.clipShape(RoundedCornersShape(corners: [.bottomLeft, .bottomRight], radius: 20))
+            .clipShape(RoundedCornersShape(corners: [.bottomLeft, .bottomRight], radius: 20))
         }
         .font(.system(size: 12))
         .foregroundColor(Color.colorForeground)
         .padding(.bottom, 10)
+    }
+}
+
+// MARK: - Preview
+struct FeedView_Previews: PreviewProvider {
+    static var previews: some View {
+        FeedView()
+            .background(Color.colorBackground)
     }
 }
